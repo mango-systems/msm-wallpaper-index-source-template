@@ -5,6 +5,9 @@ from PIL import Image
 folder = "wallpaper"
 thumbnail_folder = "wallpaper-thumbnail"
 
+raw_thumbnail_baselink = "https://raw.githubusercontent.com/msm-linux/msm-wallpaper-index-source/main/wallpaper-thumbnail/"
+raw_main_baselink = "https://raw.githubusercontent.com/msm-linux/msm-wallpaper-index-source/main/wallpaper/"
+
 # Create the thumbnail folder if it does not already exist
 if not os.path.exists(thumbnail_folder):
   os.mkdir(thumbnail_folder)
@@ -28,8 +31,8 @@ for filename in filenames:
     # Add the thumbnail filename to the data dictionary
     data[filename] = {
       "filename": os.path.splitext(filename)[0],
-      "highres_link": "abc.xyz" + filename,
-      "thumbnail_file_link": "yui.oiu/wallpaper-thumbnail/" + thumbnail_filename
+      "highres_link": raw_main_baselink + filename,
+      "thumbnail_file_link": raw_thumbnail_baselink + thumbnail_filename
     }
 
 # Write the data to a JSON file (overwriting the file if it exists)

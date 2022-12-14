@@ -1,17 +1,1 @@
-{
-    "0p2iiuzkzw2a1.png": {
-        "filename": "0p2iiuzkzw2a1",
-        "highres_link": "abc.xyz0p2iiuzkzw2a1.png",
-        "thumbnail_file_link": "yui.oiu/wallpaper-thumbnail/0p2iiuzkzw2a1-thumbnail.png"
-    },
-    "Mango-Grub-1920x1080.png": {
-        "filename": "Mango-Grub-1920x1080",
-        "highres_link": "abc.xyzMango-Grub-1920x1080.png",
-        "thumbnail_file_link": "yui.oiu/wallpaper-thumbnail/Mango-Grub-1920x1080-thumbnail.png"
-    },
-    "Black_Simple_Text_Deskstop_Wallpaper(1).png": {
-        "filename": "Black_Simple_Text_Deskstop_Wallpaper(1)",
-        "highres_link": "abc.xyzBlack_Simple_Text_Deskstop_Wallpaper(1).png",
-        "thumbnail_file_link": "yui.oiu/wallpaper-thumbnail/Black_Simple_Text_Deskstop_Wallpaper(1)-thumbnail.png"
-    }
-}
+{"0p2iiuzkzw2a1.png": {"filename": "0p2iiuzkzw2a1", "highres_link": "https://raw.githubusercontent.com/msm-linux/msm-wallpaper-index-source/main/wallpaper/0p2iiuzkzw2a1.png", "thumbnail_file_link": "https://raw.githubusercontent.com/msm-linux/msm-wallpaper-index-source/main/wallpaper-thumbnail/0p2iiuzkzw2a1-thumbnail.png"}, "Mango-Grub-1920x1080.png": {"filename": "Mango-Grub-1920x1080", "highres_link": "https://raw.githubusercontent.com/msm-linux/msm-wallpaper-index-source/main/wallpaper/Mango-Grub-1920x1080.png", "thumbnail_file_link": "https://raw.githubusercontent.com/msm-linux/msm-wallpaper-index-source/main/wallpaper-thumbnail/Mango-Grub-1920x1080-thumbnail.png"}, "Black_Simple_Text_Deskstop_Wallpaper(1).png": {"filename": "Black_Simple_Text_Deskstop_Wallpaper(1)", "highres_link": "https://raw.githubusercontent.com/msm-linux/msm-wallpaper-index-source/main/wallpaper/Black_Simple_Text_Deskstop_Wallpaper(1).png", "thumbnail_file_link": "https://raw.githubusercontent.com/msm-linux/msm-wallpaper-index-source/main/wallpaper-thumbnail/Black_Simple_Text_Deskstop_Wallpaper(1)-thumbnail.png"}}
