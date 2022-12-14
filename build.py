@@ -1,64 +1,37 @@
-# import os
-# import json
-
-# # Set the directory you want to rename files in
-# dir_name = "./wallpaper"
-
-# # Create a dictionary to store the old and new filenames
-# filenames = {}
-
-# # Loop through the files in the directory
-# for filename in os.listdir(dir_name):
-#   # Get the full path of the file
-#   file_path = os.path.join(dir_name, filename)
-#   # Create the new filename by replacing spaces with underscores
-#   new_filename = filename.replace(" ", "_")
-#   # Get the full path of the new file
-#   new_file_path = os.path.join(dir_name, new_filename)
-#   # Rename the file
-#   os.rename(file_path, new_file_path)
-#   # Add the old and new filenames to the dictionary
-#   filenames[filename] = new_filename
-
-# # Write the filenames to a JSON file
-# with open("wallpaper-index.json", "w") as f:
-#   json.dump(filenames, f)
-
-
 import os
 import json
 from PIL import Image
 
-# Set the directory you want to rename files in
-dir_name = "wallpaper"
+folder = "wallpaper"
+thumbnail_folder = "wallpaper-thumbnail"
 
-# Create a directory to store the thumbnails
-thumbnail_dir = "wallpaper-thumbnails"
-if not os.path.exists(thumbnail_dir):
-  os.makedirs(thumbnail_dir)
+# Create the thumbnail folder if it does not already exist
+if not os.path.exists(thumbnail_folder):
+  os.mkdir(thumbnail_folder)
 
-# Create a dictionary to store the old and new filenames
-filenames = {}
+# Get all filenames in the folder
+filenames = os.listdir(folder)
 
-# Loop through the files in the directory
-for filename in os.listdir(dir_name):
-  # Get the full path of the file
-  file_path = os.path.join(dir_name, filename)
-  # Open the image file
-  im = Image.open(file_path)
-  # Create a thumbnail image with medium size
-  im.thumbnail((300, 300))
-  # Save the thumbnail to the specified directory
-  im.save(os.path.join(thumbnail_dir, filename))
-  # Create the new filename by replacing spaces with underscores
-  new_filename = filename.replace(" ", "_")
-  # Get the full path of the new file
-  new_file_path = os.path.join(dir_name, new_filename)
-  # Rename the file
-  os.rename(file_path, new_file_path)
-  # Add the old and new filenames to the dictionary
-  filenames[filename] = new_filename
+# Create a dictionary with the filenames and their modified versions
+data = {}
+for filename in filenames:
+  # Open the image and create a thumbnail
+  with Image.open(os.path.join(folder, filename)) as img:
+    img.thumbnail((256, 256))
 
-# Write the filenames to a JSON file
-with open("wallpaper-index.json", "w") as f:
-  json.dump(filenames, f)
+    # Save the thumbnail to the thumbnail folder
+    filename_extension = "." + filename.split(".")[-1]
+    renamed_filename = "-thumbnail" + "." + filename.split(".")[-1]
+    thumbnail_filename = filename.replace(filename_extension, renamed_filename)
+    img.save(os.path.join(thumbnail_folder, thumbnail_filename))
+
+    # Add the thumbnail filename to the data dictionary
+    data[filename] = {
+      "filename": os.path.splitext(filename)[0],
+      "highres_link": "abc.xyz" + filename,
+      "thumbnail_file_link": "yui.oiu/wallpaper-thumbnail/" + thumbnail_filename
+    }
+
+# Write the data to a JSON file (overwriting the file if it exists)
+with open("index.json", "w") as f:
+  json.dump(data, f)
