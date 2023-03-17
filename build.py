@@ -2,8 +2,10 @@ import os
 import json
 from PIL import Image
 
-folder = "wallpaper"
-thumbnail_folder = "wallpaper-thumbnail"
+current_directory = os.getcwd()
+
+folder = f"{current_directory}/wallpaper"
+thumbnail_folder = f"{current_directory}/wallpaper-thumbnail"
 
 raw_thumbnail_baselink = "https://raw.githubusercontent.com/msm-linux/msm-wallpaper-index-source/main/wallpaper-thumbnail/"
 raw_main_baselink = "https://raw.githubusercontent.com/msm-linux/msm-wallpaper-index-source/main/wallpaper/"
@@ -26,6 +28,8 @@ for filename in filenames:
     filename_extension = "." + filename.split(".")[-1]
     renamed_filename = "-thumbnail" + "." + filename.split(".")[-1]
     thumbnail_filename = filename.replace(filename_extension, renamed_filename)
+    print(filename)
+  
     img.save(os.path.join(thumbnail_folder, thumbnail_filename))
 
     # Add the thumbnail filename to the data dictionary
