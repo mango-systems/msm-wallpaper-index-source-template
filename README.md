@@ -10,6 +10,7 @@ git clone https://github.com/msm-linux/msm-wallpaper-index-source.git
 #       ## < ADD YOUR IMAGES in "wallpaper" folder > ##
 # then run
 
+pip install -r requirements.txt
 chmod +x build.py
 python3 build.py
 
